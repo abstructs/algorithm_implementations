@@ -1,28 +1,27 @@
-package isPalindrome;
+package linkedList;
 
-import isPalindrome.LinkedList;
+import linkedList.LinkedList;
 import java.util.Map;
 import java.util.HashMap;
 
-public class isPalindrome {
+public class IsPalindrome {
 	
-	public isPalindrome() {
+	public IsPalindrome() {
 		
 	}
 	
 	public static void main(String args[]) {
 		LinkedList<String> c = LinkedList.toLinkedList("racecarracecarracecarracecarracecar");
-		isPalindrome pal = new isPalindrome();
+
+		IsPalindrome pal = new IsPalindrome();
 		System.out.println(pal.isPal(c));
-		
-		
 	}
 	
 	public Boolean isPal(LinkedList<String> head) {
-		Map<Integer, String> map = new HashMap();
+		Map<Integer, String> map = new HashMap<Integer, String>();
 		int maxIdx = -1;
 		while(head != null) {
-			map.put(++maxIdx, head.data);
+			map.put(++maxIdx, head.getData());
 			head = head.next;
 		}
 		
