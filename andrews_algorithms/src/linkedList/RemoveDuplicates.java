@@ -20,7 +20,7 @@ public class RemoveDuplicates<T> {
 		a.append(2);
 		a.append(4);
 		
-		RemoveDuplicates.removeDuplicates(a).print();
+		RemoveDuplicates.removeDuplicatesNoBuf(a).print();
 		
 	}
 	
@@ -36,6 +36,27 @@ public class RemoveDuplicates<T> {
 			} else {
 				temp = temp.next;
 			}
+		}
+		
+		return head;
+	}
+	
+	public static LinkedList<Integer> removeDuplicatesNoBuf(LinkedList<Integer> head) {
+		LinkedList<Integer> p1 = head;
+		
+		while(p1 != null) {
+			LinkedList<Integer> p2 = p1;
+			while(p2 != null && p2.next != null) {
+				if(p1.getData().equals(p2.next.getData())) {
+					p2.next = p2.next.next;					
+				} else {
+					p2 = p2.next;
+				}
+			}
+			
+			
+			p1 = p1.next;
+			
 		}
 		
 		return head;
